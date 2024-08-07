@@ -21,6 +21,8 @@
 }
 .banner .slider {
   animation: var(--animation-name) 1s;
+  animation-fill-mode: forwards;
+
   position: absolute;
   width: 200px;
   height: 250px;
@@ -28,6 +30,7 @@
   left: calc(50% - 100px);
   transform-style: preserve-3d;
   transform: perspective(1000px);
+
   /* animation: bounce 15s linear infinite; */
   /* z-index: 2; */
   /* transition: transform 0.5s ease-out; */
@@ -36,6 +39,7 @@
     animation-play-state: paused;
   }
 }
+
 /* @keyframes autoRun {
   from {
     transform: perspective(1000px) rotateX(0deg) rotateY(0deg);
@@ -47,7 +51,7 @@
 @keyframes animation1 {
   from {
     transform: perspective(1000px) rotateX(0deg)
-      rotateY(var(--current-position));
+      rotateY(var(--current-position) * 60);
   }
   to {
     transform: perspective(1000px) rotateX(0deg) rotateY(60deg);
@@ -56,7 +60,7 @@
 @keyframes animation2 {
   from {
     transform: perspective(1000px) rotateX(0deg)
-      rotateY(var(--current-position));
+      rotateY(var(--current-position) * 60);
   }
   to {
     transform: perspective(1000px) rotateX(0deg) rotateY(120deg);
@@ -65,7 +69,7 @@
 @keyframes animation3 {
   from {
     transform: perspective(1000px) rotateX(0deg)
-      rotateY(var(--current-position));
+      rotateY(var(--current-position) * 60);
   }
   to {
     transform: perspective(1000px) rotateX(0deg) rotateY(180deg);
@@ -74,7 +78,7 @@
 @keyframes animation4 {
   from {
     transform: perspective(1000px) rotateX(0deg)
-      rotateY(var(--current-position));
+      rotateY(var(--current-position) * 60);
   }
   to {
     transform: perspective(1000px) rotateX(0deg) rotateY(240deg);
@@ -83,7 +87,7 @@
 @keyframes animation5 {
   from {
     transform: perspective(1000px) rotateX(0deg)
-      rotateY(var(--current-position));
+      rotateY(var(--current-position) * 60);
   }
   to {
     transform: perspective(1000px) rotateX(0deg) rotateY(300deg);
@@ -92,7 +96,7 @@
 @keyframes animation6 {
   from {
     transform: perspective(1000px) rotateX(0deg)
-      rotateY(var(--current-position));
+      rotateY(var(--current-position) * 60);
   }
   to {
     transform: perspective(1000px) rotateX(0deg) rotateY(360deg);
@@ -113,13 +117,12 @@
   height: 100%;
   object-fit: cover;
   transition: transform 0.5s ease-out;
+  &:hover {
+    transform: scale(1.3);
+  }
 }
 
-.banner .slider .item:hover img {
-  transform: scale(1.3);
-}
-
-.banner .content {
+/* .banner .content {
   position: absolute;
   bottom: 0;
   left: 50%;
@@ -203,4 +206,4 @@
       )
       translateZ(180px);
   }
-}
+} */

@@ -5,19 +5,20 @@ import DebirunPic from "/src/assets/3.jpg";
 import MildrPic from "/src/assets/4.jpg";
 import TsururuPic from "/src/assets/5.jpg";
 import XonebuPic from "/src/assets/6.jpg";
-import { Navbar } from "flowbite-react";
+//import { Navbar } from "flowbite-react";
 
 interface Animation {
   name: string;
+  position: number;
 }
 
 const animations: Animation[] = [
-  { name: "animation1" },
-  { name: "animation2" },
-  { name: "animation3" },
-  { name: "animation4" },
-  { name: "animation5" },
-  { name: "animation6" },
+  { name: "animation1" ,position : 1},
+  { name: "animation2" ,position : 2},
+  { name: "animation3" ,position : 3},
+  { name: "animation4" ,position : 4},
+  { name: "animation5" ,position : 5},
+  { name: "animation6" ,position : 6},
 ];
 
 function Portfolio() {
@@ -84,7 +85,7 @@ function Portfolio() {
       </div>
 
       {animations.map((animation, index) => (
-        <button key={index} onClick={() => handleButtonClick(animation.name)}>
+        <button key={index} onClick={() => handleButtonClick(animation.name)} style={{ "--current-position": animation.position } as React.CSSProperties}>
           {animation.name}
         </button>
       ))}
