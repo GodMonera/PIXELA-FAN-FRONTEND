@@ -1,68 +1,206 @@
+/* @tailwind base;
+@tailwind components;
+@tailwind utilities; */
+
 :root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
-
   color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
   background-color: #242424;
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
 }
 
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
+.img {
+  border-radius: 50%;
 }
 
-body {
-  margin: 0;
+/* 3d-slider */
+.banner {
+  width: 100%;
+  height: 100vh;
+  text-align: center;
+  overflow: hidden;
+  position: relative;
+}
+.banner .slider {
+  animation: var(--animation-name) 1s;
+  position: absolute;
+  width: 200px;
+  height: 250px;
+  top: 30%;
+  left: calc(50% - 100px);
+  transform-style: preserve-3d;
+  transform: perspective(1000px);
+  /* animation: bounce 15s linear infinite; */
+  /* z-index: 2; */
+  /* transition: transform 0.5s ease-out; */
+
+  &:hover {
+    animation-play-state: paused;
+  }
+}
+/* @keyframes autoRun {
+  from {
+    transform: perspective(1000px) rotateX(0deg) rotateY(0deg);
+  }
+  to {
+    transform: perspective(1000px) rotateX(0deg) rotateY(360deg);
+  }
+} */
+@keyframes animation1 {
+  from {
+    transform: perspective(1000px) rotateX(0deg)
+      rotateY(var(--current-position));
+  }
+  to {
+    transform: perspective(1000px) rotateX(0deg) rotateY(60deg);
+  }
+}
+@keyframes animation2 {
+  from {
+    transform: perspective(1000px) rotateX(0deg)
+      rotateY(var(--current-position));
+  }
+  to {
+    transform: perspective(1000px) rotateX(0deg) rotateY(120deg);
+  }
+}
+@keyframes animation3 {
+  from {
+    transform: perspective(1000px) rotateX(0deg)
+      rotateY(var(--current-position));
+  }
+  to {
+    transform: perspective(1000px) rotateX(0deg) rotateY(180deg);
+  }
+}
+@keyframes animation4 {
+  from {
+    transform: perspective(1000px) rotateX(0deg)
+      rotateY(var(--current-position));
+  }
+  to {
+    transform: perspective(1000px) rotateX(0deg) rotateY(240deg);
+  }
+}
+@keyframes animation5 {
+  from {
+    transform: perspective(1000px) rotateX(0deg)
+      rotateY(var(--current-position));
+  }
+  to {
+    transform: perspective(1000px) rotateX(0deg) rotateY(300deg);
+  }
+}
+@keyframes animation6 {
+  from {
+    transform: perspective(1000px) rotateX(0deg)
+      rotateY(var(--current-position));
+  }
+  to {
+    transform: perspective(1000px) rotateX(0deg) rotateY(360deg);
+  }
+}
+
+.banner .slider .item {
+  position: absolute;
+  inset: 0 0 0 0;
+  transform: rotateY(
+      calc((var(--position) - 1) * (360 / var(--quantity)) * 1deg)
+    )
+    translatez(400px);
+  transition: transform 0.5s ease-out;
+}
+.banner .slider .item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease-out;
+}
+
+.banner .slider .item:hover img {
+  transform: scale(1.3);
+}
+
+.banner .content {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: min(1400px, 100vw);
+  height: max-content;
+  padding-bottom: 100px;
   display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 1;
 }
-
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
+.banner .content h1 {
+  font-family: "ICA Rubrik";
+  font-size: 16em;
+  line-height: 1em;
+  color: #25283b;
+  position: relative;
 }
-
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
+.banner .content h1::after {
+  position: absolute;
+  inset: 0 0 0 0;
+  content: attr(data-content);
+  z-index: 2;
+  -webkit-text-stroke: 2px #d2d2d2;
+  color: transparent;
 }
-button:hover {
-  border-color: #646cff;
+.banner .content .author {
+  font-family: Poppins;
+  text-align: right;
+  max-width: 200px;
 }
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
+.banner .content h2 {
+  font-size: 3em;
 }
-
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
+.banner .content .model {
+  background-image: url(images/model.png);
+  width: 100%;
+  height: 75vh;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  background-size: auto 130%;
+  background-repeat: no-repeat;
+  background-position: top center;
+  z-index: 1;
+}
+@media screen and (max-width: 1023px) {
+  .banner .slider {
+    width: 160px;
+    height: 200px;
+    left: calc(50% - 80px);
   }
-  a:hover {
-    color: #747bff;
+  .banner .slider .item {
+    transform: rotateY(
+        calc((var(--position) - 1) * (360 / var(--quantity)) * 1deg)
+      )
+      translateZ(300px);
   }
-  button {
-    background-color: #f9f9f9;
+  .banner .content .author {
+    color: #fff;
+    padding: 20px;
+    text-shadow: 0 10px 20px #000;
+    z-index: 2;
+    max-width: unset;
+    width: 100%;
+    text-align: center;
+    padding: 0 30px;
+  }
+}
+@media screen and (max-width: 767px) {
+  .banner .slider {
+    width: 100px;
+    height: 150px;
+    left: calc(50% - 50px);
+  }
+  .banner .slider .item {
+    transform: rotateY(
+        calc((var(--position) - 1) * (360 / var(--quantity)) * 1deg)
+      )
+      translateZ(180px);
   }
 }
