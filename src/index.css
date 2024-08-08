@@ -7,8 +7,27 @@
   background-color: #242424;
 }
 
-.img {
-  border-radius: 50%;
+.logo {
+  position: absolute;
+  top: 20%;
+  left: 5%;
+  width: 500px /* desired width */;
+  height: 750px /* desired height */;
+  transform-style: preserve-3d;
+  transform: translateZ(-10px);
+  animation: swing 2s infinite;
+}
+
+@keyframes swing {
+  0% {
+    transform: rotateZ(-5deg);
+  }
+  50% {
+    transform: rotateZ(5deg);
+  }
+  100% {
+    transform: rotateZ(-5deg);
+  }
 }
 
 /* 3d-slider */
@@ -19,6 +38,7 @@
   overflow: hidden;
   position: relative;
 }
+
 .banner .slider {
   animation: var(--animation-name) 1s;
   animation-fill-mode: forwards;
@@ -48,7 +68,7 @@
     transform: perspective(1000px) rotateX(0deg) rotateY(360deg);
   }
 } */
-@keyframes animation1 {
+@keyframes Ami {
   from {
     transform: perspective(1000px) rotateX(0deg)
       rotateY(var(--current-position) * 60);
@@ -57,7 +77,7 @@
     transform: perspective(1000px) rotateX(0deg) rotateY(60deg);
   }
 }
-@keyframes animation2 {
+@keyframes Xonebu {
   from {
     transform: perspective(1000px) rotateX(0deg)
       rotateY(var(--current-position) * 60);
@@ -66,7 +86,7 @@
     transform: perspective(1000px) rotateX(0deg) rotateY(120deg);
   }
 }
-@keyframes animation3 {
+@keyframes Tsururu {
   from {
     transform: perspective(1000px) rotateX(0deg)
       rotateY(var(--current-position) * 60);
@@ -75,7 +95,7 @@
     transform: perspective(1000px) rotateX(0deg) rotateY(180deg);
   }
 }
-@keyframes animation4 {
+@keyframes Mild-R {
   from {
     transform: perspective(1000px) rotateX(0deg)
       rotateY(var(--current-position) * 60);
@@ -84,7 +104,7 @@
     transform: perspective(1000px) rotateX(0deg) rotateY(240deg);
   }
 }
-@keyframes animation5 {
+@keyframes Debirun {
   from {
     transform: perspective(1000px) rotateX(0deg)
       rotateY(var(--current-position) * 60);
@@ -93,7 +113,7 @@
     transform: perspective(1000px) rotateX(0deg) rotateY(300deg);
   }
 }
-@keyframes animation6 {
+@keyframes Ashyra {
   from {
     transform: perspective(1000px) rotateX(0deg)
       rotateY(var(--current-position) * 60);
@@ -117,93 +137,8 @@
   height: 100%;
   object-fit: cover;
   transition: transform 0.5s ease-out;
+  border-radius: 50%;
   &:hover {
     transform: scale(1.3);
   }
 }
-
-/* .banner .content {
-  position: absolute;
-  bottom: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  width: min(1400px, 100vw);
-  height: max-content;
-  padding-bottom: 100px;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  align-items: center;
-  z-index: 1;
-}
-.banner .content h1 {
-  font-family: "ICA Rubrik";
-  font-size: 16em;
-  line-height: 1em;
-  color: #25283b;
-  position: relative;
-}
-.banner .content h1::after {
-  position: absolute;
-  inset: 0 0 0 0;
-  content: attr(data-content);
-  z-index: 2;
-  -webkit-text-stroke: 2px #d2d2d2;
-  color: transparent;
-}
-.banner .content .author {
-  font-family: Poppins;
-  text-align: right;
-  max-width: 200px;
-}
-.banner .content h2 {
-  font-size: 3em;
-}
-.banner .content .model {
-  background-image: url(images/model.png);
-  width: 100%;
-  height: 75vh;
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  background-size: auto 130%;
-  background-repeat: no-repeat;
-  background-position: top center;
-  z-index: 1;
-}
-@media screen and (max-width: 1023px) {
-  .banner .slider {
-    width: 160px;
-    height: 200px;
-    left: calc(50% - 80px);
-  }
-  .banner .slider .item {
-    transform: rotateY(
-        calc((var(--position) - 1) * (360 / var(--quantity)) * 1deg)
-      )
-      translateZ(300px);
-  }
-  .banner .content .author {
-    color: #fff;
-    padding: 20px;
-    text-shadow: 0 10px 20px #000;
-    z-index: 2;
-    max-width: unset;
-    width: 100%;
-    text-align: center;
-    padding: 0 30px;
-  }
-}
-@media screen and (max-width: 767px) {
-  .banner .slider {
-    width: 100px;
-    height: 150px;
-    left: calc(50% - 50px);
-  }
-  .banner .slider .item {
-    transform: rotateY(
-        calc((var(--position) - 1) * (360 / var(--quantity)) * 1deg)
-      )
-      translateZ(180px);
-  }
-} */
