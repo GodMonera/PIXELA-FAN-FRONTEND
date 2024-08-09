@@ -1,16 +1,17 @@
 import React from "react";
+import { NavLink } from "react-router-dom";
 
 function NavigationBar() {
   return (
-    <div className="navbar fixed top-0 left-0 w-full z-50 bg-white border-b border-gray-200 dark:bg-gray-900 dark:border-gray-700">
-      <nav className="container mx-auto flex flex-wrap items-center justify-between p-4">
-        <a href="/" className="flex items-center">
+    <div className="navbar bg-white border-b border-gray-200 dark:bg-gray-900 dark:border-gray-700">
+      {/* <nav className="container mx-auto flex flex-wrap items-center justify-between p-4">
+        <NavLink to="/" className="flex items-center">
           <img
             src="/src/assets/pixela_logo.png"
             alt="pixela logo"
             className="w-10 h-10"
           />
-        </a>
+        </NavLink>
         <button
           data-collapse-toggle="navbar-menu"
           type="button"
@@ -38,29 +39,29 @@ function NavigationBar() {
         <div className="hidden md:flex md:items-center md:space-x-8">
           <ul className="flex flex-col md:flex-row md:space-x-8 md:mt-0 mt-4 font-medium bg-gray-50 dark:bg-gray-800 md:bg-white border border-gray-100 rounded-lg dark:border-gray-700">
             <li>
-              <a
-                href="/"
+              <NavLink
+                to="/"
                 className="block py-2 px-3 text-gray-700 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-500"
                 aria-current="page"
               >
                 Home
-              </a>
+              </NavLink>
             </li>
             <li>
-              <a
-                href="/livestream"
+              <NavLink
+                to="/livestream"
                 className="block py-2 px-3 text-gray-700 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-500"
               >
                 Live
-              </a>
+              </NavLink>
             </li>
             <li>
-              <a
-                href="/feeling"
+              <NavLink
+                to="/feeling"
                 className="block py-2 px-3 text-gray-700 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-500"
               >
                 Feeling
-              </a>
+              </NavLink>
             </li>
           </ul>
         </div>
@@ -70,32 +71,35 @@ function NavigationBar() {
         >
           <ul className="flex flex-col p-4 font-medium">
             <li>
-              <a
-                href="/"
+              <NavLink
+                to="/"
                 className="block py-2 px-3 text-gray-700 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-500"
                 aria-current="page"
               >
                 Home
-              </a>
+              </NavLink>
             </li>
             <li>
-              <a
-                href="/livestream"
+              <NavLink
+                to="/livestream"
                 className="block py-2 px-3 text-gray-700 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-500"
               >
                 Live
-              </a>
+              </NavLink>
             </li>
             <li>
-              <a
-                href="/feeling"
+              <NavLink
+                to="/feeling"
                 className="block py-2 px-3 text-gray-700 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-500"
               >
                 Feeling
-              </a>
+              </NavLink>
             </li>
           </ul>
         </div>
+      </nav> */}
+      <nav className="w-full bg-blue-300">
+
       </nav>
     </div>
   );
